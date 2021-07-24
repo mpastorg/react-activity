@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from './logo_madastur.svg';
+import Activity from './activity';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <center>
+        <img src={logo} alt="Madastur logo" width="400" />
+        <br /><br /><br />
+        <a href="https://api.madastur.com">Go to Home</a>
+        <Router>
+          <Route exact path='/strava/activity/:activityId' component={Activity} />
+          
+        </Router>
+        
+        
+      </center>
     </div>
   );
 }

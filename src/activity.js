@@ -1,9 +1,11 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { useParams } from 'react-router-dom';
 
 export default function Activity() {
     console.log("enter activity")
-    return GetActivity({"activityId":5666238308})
+    const { activityId } = useParams();
+    return GetActivity({activityId})
   }
 
 //https://api.madastur.com/strava/activity/5666238308
@@ -13,11 +15,12 @@ function GetActivity({ activityId }) {
   const [loading, setLoading] = useState(false);
   console.log(activityId);
   useEffect(() => {
+    setLoading(true);
     if (!activityId){ 
       console.log("no hay nada");
-      return};
+      return <p> Nothing is here!!!</p>;
+    }
 
-    setLoading(true);
     fetch(`https://api.madastur.com/strava/activity/${activityId}`)
       .then(data => data.json())
       .then(setData)
