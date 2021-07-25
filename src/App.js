@@ -10,7 +10,7 @@ function App() {
         <br /><br /><br />
         <a href="https://api.madastur.com">Go to Home</a>
         <Router>
-          <Route exact path='/strava/activity/:activityId' component={Activity} />
+          <Route exact path='/strava/activity-det/:activityId' component={Activity} />
           
         </Router>
         
