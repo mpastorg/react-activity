@@ -19,9 +19,7 @@ spec:
           image: mpastorg/react-activity:MPGRELEASE.MPGENV.MPGBUILD_NUMBER
           imagePullPolicy: Always
           ports:
-          - containerPort: 443
-            containerPort: 80
-            containerPort: 8079
+          - containerPort: 8079
           resources:
             limits:
               cpu: 500m
@@ -41,16 +39,11 @@ metadata:
 spec:
   ports:
   ports:
-  - name: http
-    port: 80
-    nodePort: MPGHTTP_PORT
+  - name: http8
+    port: 8079
+    nodePort: 32225
     protocol: TCP
-    targetPort: 80
-  - name: https
-    port: 443
-    nodePort: MPGHTTPS_PORT
-    protocol: TCP
-    targetPort: 443
+    targetPort: 8079
   selector:
     app: react-activity
   sessionAffinity: None
