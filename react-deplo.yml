@@ -16,7 +16,7 @@ spec:
      spec:
         containers:
         - name: react-activity
-          image: mpastorg/react-activity:MPGRELEASE.MPGENV.MPGBUILD_NUMBER
+          image: mpastorg/react-activity:MPGRELEASE.MPGBUILD_NUMBER
           imagePullPolicy: Always
           ports:
           - containerPort: 80
@@ -40,7 +40,7 @@ spec:
   ports:
   - name: http
     port: 80
-    nodePort: 32225
+    nodePort: MPGHTTP_PORT
     protocol: TCP
     targetPort: 80
   selector:

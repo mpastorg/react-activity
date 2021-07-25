@@ -2,6 +2,7 @@ pipeline {
   agent any
   environment {
     ENV = 'pro'
+    MPGHTTP_PORT = 32215
     RELEASE = '0.1'
     registry = "mpastorg/react-activity"
     registryCredential = 'dockerhub'

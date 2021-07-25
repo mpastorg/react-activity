@@ -5,7 +5,7 @@ pipeline {
   agent any
   environment {
     ENV = 'pre'
-    MPGHTTP_PORT = 32209
+    MPGHTTP_PORT = 32225
     MPGHTTPS_PORT = 32206
     RELEASE = '0.1'
     registry = "mpastorg/react-activity"
