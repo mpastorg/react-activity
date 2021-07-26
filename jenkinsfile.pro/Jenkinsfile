@@ -10,8 +10,14 @@ pipeline {
   }
   stages {
     stage('prepare for kubernetes') {
+      input {
+              message "Introduce build number"
+              parameters {
+                  string(name: 'MPGBUILD', defaultValue: '00', description: 'Deploy this build number:')
+              }
+      }
       steps{
-        sh "sed 's/MPGRELEASE.MPGBUILD_NUMBER/$RELEASE.$BUILD_NUMBER/' react-deplo.yml > deplo_1.yml"
+        sh "sed 's/MPGRELEASE.MPGBUILD_NUMBER/$RELEASE.$MPGBUILD/' react-deplo.yml > deplo_1.yml"
         sh "sed 's/MPGENV/default/' deplo_1.yml > deplo_1b.yml"
         sh "sed 's/MPGHTTP_PORT/$MPGHTTP_PORT/' deplo_1b.yml > deplo_2c.yml"
       }
