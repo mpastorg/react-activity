@@ -13,6 +13,7 @@ pipeline {
       steps{
         sh "sed 's/MPGRELEASE.MPGBUILD_NUMBER/$RELEASE.$BUILD_NUMBER/' react-deplo.yml > deplo_1.yml"
         sh "sed 's/MPGENV/default/' deplo_1.yml > deplo_1b.yml"
+        sh "sed 's/MPGHTTP_PORT/$MPGHTTP_PORT/' deplo_1b.yml > deplo_2c.yml"
       }
     }
     stage('SSH Into k8s Server') {
@@ -27,9 +28,9 @@ pipeline {
             {
                 remote.user = "$USERNAME"
                 remote.password = "$PASSWORD"
-                sshPut remote: remote, from: 'deplo_1b.yml', into: '.'
-                sshCommand remote: remote, command: "kubectl apply -f deplo_1b.yml"
-                sshRemove remote: remote, path: 'deplo_1b.yml'
+                sshPut remote: remote, from: 'deplo_2c.yml', into: '.'
+                sshCommand remote: remote, command: "kubectl apply -f deplo_2c.yml"
+                sshRemove remote: remote, path: 'deplo_2c.yml'
             }
         }
       }

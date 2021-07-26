@@ -12,7 +12,7 @@ spec:
      metadata:
         labels:
           app: react-activity
-          release: MPGRELEASE.MPGENV.MPGBUILD_NUMBER
+          release: MPGRELEASE.MPGBUILD_NUMBER
      spec:
         containers:
         - name: react-activity
