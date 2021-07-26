@@ -11,7 +11,7 @@ pipeline {
   stages {
     stage('prepare for kubernetes') {
       steps{
-        sh "sed 's/MPGRELEASE.MPGBUILD_NUMBER/$RELEASE.$ENV.$BUILD_NUMBER/' react-deplo.yml > deplo_1.yml"
+        sh "sed 's/MPGRELEASE.MPGBUILD_NUMBER/$RELEASE.$BUILD_NUMBER/' react-deplo.yml > deplo_1.yml"
         sh "sed 's/MPGENV/default/' deplo_1.yml > deplo_1b.yml"
       }
     }
