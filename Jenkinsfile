@@ -33,7 +33,7 @@ pipeline {
     }
     stage('prepare for kubernetes') {
       steps{
-        sh "sed 's/MPGRELEASE.MPGENV.MPGBUILD_NUMBER/$RELEASE.$BUILD_NUMBER/' react-deplo.yml > deplo_1.yml"
+        sh "sed 's/MPGRELEASE.MPGBUILD_NUMBER/$RELEASE.$BUILD_NUMBER/' react-deplo.yml > deplo_1.yml"
         sh "sed 's/MPGENV/pre/' deplo_1.yml > deplo_1b.yml"
         sh "sed 's/MPGHTTP_PORT/$MPGHTTP_PORT/' deplo_1b.yml > deplo_2c.yml"
         sh "sed 's/MPGHTTPS_PORT/$MPGHTTPS_PORT/' deplo_2c.yml > deplo_2d.yml"
