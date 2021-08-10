@@ -38,20 +38,28 @@ function GetActivities({ athleteId }) {
     console.log("paso por no data")
     return null};
   const myt = eval(data);
-  console.log("mpg"+myt[1].activityid.toString());
+  console.log("mpg"+myt.toString());
   const listi = myt.map( (ii) => 
-    {const myurl = "/strava/activity/"+ii.activityid;
-    return (
-    <p>
-        <a href={myurl}>/strava/activity/{ii.activityid}</a>
-    </p>)});
+  {
+    const myurl = "/strava/activity/"+ii.activityid;
+    return(
+    <tr>
+      <td><a href={myurl}>/strava/activity/{ii.activityid}</a>
+      </td>
+      <td>movingTime:{ii.movingTime}</td>
+      <td>calories:{ii.calories}</td>
+      <td>activityDate:{ii.activityDate}</td>
+    </tr>
+    )
+  });
 
   return (
     <div className="stravaActivity">
-      <div>
-         {listi}
-        
-      </div>
+      <table>
+      <tbody>
+         {listi}      
+      </tbody>
+    </table>
     </div>
   );
 }
