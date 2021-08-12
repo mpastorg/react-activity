@@ -1,10 +1,9 @@
 import logo from './logo_madastur.svg';
 import Activity from './activity';
 import Activities from './activities';
-import { BrowserRouter as Router, Switch, Route, useHistory} from 'react-router-dom';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
 
 function App() {
-  const history = useHistory();
 
   return (
     <div className="App">
