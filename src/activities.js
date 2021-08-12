@@ -9,6 +9,7 @@ export default function Activities() {
   }
 
 //https://api.madastur.com/strava/activities/
+//https://api.madastur.com/strava/activities/60310151/2021-08-12/
 function GetActivities({ athleteId }) {
   const [data, setData] = useState();
   const [error, setError] = useState();
@@ -45,9 +46,9 @@ function GetActivities({ athleteId }) {
     <tr key={ii.activityid}>
       <td><a href={myurl}>/strava/activity/{ii.activityid}</a>
       </td>
-      <td>movingTime:{ii.movingTime}</td>
+      <td>movingTime:{ii.movingtime}</td>
       <td>calories:{ii.calories}</td>
-      <td>activityDate:{ii.activityDate}</td>
+      <td>activityDate:{ii.activitydate}</td>
     </tr>
     )
   });
