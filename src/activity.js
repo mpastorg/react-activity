@@ -45,8 +45,10 @@ function GetActivity({ activityId }) {
         <p>Activity Type: {data.type}</p>
         <p>Calories: {data.calories}</p>
         <p>Activity Name: {data.name}</p>
-        <p>Activity Time: {data.start_date_local}</p>
-        <p>Moving time: {data.moving_time / 60}</p>
+        <p>Avg. Heart Rate: {data.average_heartrate} bpm</p>
+        <p>Activity Date: {data.start_date_local.substring(0,10)}</p>
+        <p>Activity Time: {data.start_date_local.substring(11,16)}</p>
+        <p>Moving time: {data.moving_time / 60} minutes</p>
         <p>Distance: {data.distance}</p>
       </div>
     </div>
