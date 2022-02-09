@@ -15,7 +15,7 @@ function App() {
       <center>
         <img src={logo} alt="Madastur logo" width="400" />
         <br /><br /><br />
-        <a href="https://api.madastur.com">Go to Home</a> &nbsp;
+        <a href="https://www.madastur.com">Go to Home</a> &nbsp;
          | &nbsp;<a href="javascript:history.back()">Go Back</a>
          <br/><br/><br/>
         <label>Filter by Date:</label>&nbsp;&nbsp;
