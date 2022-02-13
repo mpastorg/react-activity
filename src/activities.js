@@ -8,8 +8,6 @@ export default function Activities() {
     return GetActivities({athleteId})
   }
 
-//https://api.madastur.com/strava/activities/
-//https://api.madastur.com/strava/activities/60310151/2021-08-12/
 function GetActivities({ athleteId }) {
   const [data, setData] = useState();
   const [error, setError] = useState();

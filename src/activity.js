@@ -8,7 +8,6 @@ export default function Activity() {
     return GetActivity({activityId})
   }
 
-//https://api.madastur.com/strava/activity/5666238308
 function GetActivity({ activityId }) {
   const [data, setData] = useState();
   const [error, setError] = useState();
